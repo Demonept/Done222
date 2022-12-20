@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
 </head>
 <body>
 <h1>It's time to cars</h1>
-<ul>
+<table>
+    <tr>
+        <th>Фирма</th>
+        <th>Год производства</th>
+        <th>Максимальная скорость</th>
+    </tr>
     <th:block th:each="car : ${cars}">
-        <h1 th:text="${car.getModel() + car.getYear()}"></h1>
-<!--        <h2 th:maxspeed =" ${car.getMaxSpeed()}"></h2>-->
+        <tr>
+            <td th:text="${car.getModel}"></td>
+            <td th:text="${car.getYear}"></td>
+            <td th:text="${car.getMaxSpeed}"></td>
+        </tr>
     </th:block>
-</ul>
+</table>
 
 </body>
 </html>
